@@ -1,39 +1,45 @@
 <div class="container py-5">
-    <div class="grid grid-cols-3 gap-4 border-b-1 border-b-solid border-b-[#eee] pb-5 mb-5">
+    <div class="grid md:grid-cols-3 gap-5 border-b-1 border-b-solid border-b-[#eee] pb-5 mb-5">
         <div>
-            <h5>
+            <h5 class="mb-4">
                 Our Information
 
             </h5>
-            <div>
-                <i class="fas fa-map-marker-alt me-3"></i>
+            <div class="text-[13px] mb-3">
+                <i class="fas fa-map-marker-alt me-2"></i>
                 60 29th Street San Francisco, 94110 507-Union Trade Center, United
                 States America
             </div>
 
-            <div>
-                <i class="fas fa-mobile-alt me-3"></i>
+            <div class="text-[13px] mb-3">
+                <i class="fas fa-mobile-alt me-2"></i>
                 (+91) 0123-456-789
             </div>
-            <br>
-            (+00) 123-456-7890
-            <br>
-            demo@example.com
-
+            <div class="text-[13px] mb-3">
+                <i class="fas fa-mobile-alt me-2"></i>
+                (+00) 123-456-7890
+            </div>
+            <div class="text-[13px] mb-3">
+                <i class="fas fa-envelope me-2"></i>
+                demo@example.com
+            </div>
 
         </div>
         <div>
-            <h5>
-                Our Information
+            <h5 class="mb-4">
+                Quick Links
 
             </h5>
-            60 29th Street San Francisco, 94110 507-Union Trade Center, United States America
-            <br>
-            (+91) 0123-456-789
-            <br>
-            (+00) 123-456-7890
-            <br>
-            demo@example.com
+
+            <a routerLink="/home" routerLinkActive="active" class="nav-link mb-3 !text-[13px]">
+                Home
+            </a>
+
+
+            <a routerLink="/shop" routerLinkActive="active" class="nav-link mb-3 !text-[13px]">
+                Shop
+            </a>
+
 
 
         </div>

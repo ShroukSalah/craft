@@ -1,1 +1,12 @@
-<p>shop works!</p>
+<div class="container">
+    <div class="row gap-lg-5 gap-y-4 my-5">
+        @for (product of products; track product.id) {
+        <div class="col-lg-2 col-md-3 col-6  px-lg-0">
+            <app-product-card [productCard]="product"></app-product-card>
+
+        </div>
+        }
+
+    </div>
+
+</div>
