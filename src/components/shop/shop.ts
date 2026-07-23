@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductCard } from "../product-card/product-card";
-import { Product } from '../../app/product';
+import { Product } from '../../interfaces/product';
+import { ProductsService } from '../../services/products-service';
 
 @Component({
   selector: 'app-shop',
@@ -8,27 +9,19 @@ import { Product } from '../../app/product';
   templateUrl: './shop.html',
   styleUrl: './shop.css',
 })
-export class Shop {
+export class Shop implements OnInit {
+  private readonly productsService = inject(ProductsService)
+  allProducts: Product[] = [];
+  ngOnInit(): void {
 
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Jaipur Art and Rugs Decorative, Cushion',
-      price: 149.99,
-      image: 'images/pro1.jpg',
-    },
-     {
-      id: 2,
-      name: 'ASTRID 20 Cms Blue Cotton Travel Pouch',
-      price: 255,
-      image: 'images/pro2.jpg',
-    },
-     {
-      id: 3,
-      name: 'Teng Jin Nantucket Round Handicraft',
-      price: 149.99,
-      image: 'images/pro3.jpg',
-    }
-  ];
+    this.productsService.getProducts().subscribe({
+      next: (res) => {
+        this.allProducts = res;
+        console.log('%cResponse:', 'background:red; color:white; padding:2px 6px; border-radius:4px;', this.allProducts);
+      },
+
+      error: () => { }
+    })
+  }
 
 }
